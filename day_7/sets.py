@@ -2,6 +2,8 @@ fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
 st3 = fruits.union(vegetables)
 print(st3)
+st4 = fruits.intersection(vegetables)
+print(st4)
 
 x = 'awesome'
 def myfunc():
