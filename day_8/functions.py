@@ -44,7 +44,7 @@ def greet(name, location):
    
     print("Hi there", name, "how is the weather in", location)
 
-greet(name="Alice", location="New York")  
+#greet(name="Alice", location="New York")  
 
 my_dict = {"name": "Alice", "location": "New York"}
 
