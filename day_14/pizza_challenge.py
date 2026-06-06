@@ -28,5 +28,4 @@ new_pizza = Pizza('thin', 'thick')
 new_pizza.add_topping("Cheese")
 new_pizza.pizza_details()
 
-friend_pizza = Pizza("medium", 'thin', ['olives', 'mushrooms'])
-friend_pizza.pizza_details()
+ 
