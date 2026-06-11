@@ -70,14 +70,14 @@ def square(x):
 squared_numbers = map(square, numbers)
 print(list(squared_numbers))
 # ---------------------
-countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+worldmap = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 def countries_upper(country):
     return country.upper()
 
-upper_countries = map(countries_upper, countries)
+upper_countries = map(countries_upper, worldmap)
 print(list(upper_countries))
 # ----------------
 def filter_land(countries):
@@ -86,13 +86,13 @@ def filter_land(countries):
     else:
         return False
     
-land_countries = filter(filter_land, countries)
+land_countries = filter(filter_land, worldmap)
 print(list(land_countries))
 # -------------
-result = list(filter(lambda country: len(country) >= 6, countries))
+result = list(filter(lambda country: len(country) >= 6, worldmap))
 print(result)
 #---------
-result_2 = list(filter(lambda country: country.startswith("E"), countries))
+result_2 = list(filter(lambda country: country.startswith("E"), worldmap))
 print(result_2)
 #------------
 # Declare a function called get_string_lists which takes a list as a parameter and then returns a list containing only string items.
@@ -106,7 +106,23 @@ def sum_of_numbers(x, y):
 result_3 = reduce(sum_of_numbers, numbers)
 print(result_3)
 #-------------
-result_4 = (reduce(lambda a, b: a + ", " + b, countries[:-1]) + ", and "
-            + countries[-1] + " are north European countries")
-
+result_4 = (reduce(lambda a, b: a + ", " + b, worldmap[:-1]) + ", and "
+            + worldmap[-1] + " are north European countries")
 print(result_4)
+#------------
+import total_countries
+def categorize_countries(countri):
+    return 'ia' in countri
+
+result_5 = list(filter(categorize_countries, total_countries.countries))
+print(result_5)
+#------
+
+def count_countries_by_letter(countries):
+    return reduce(lambda dit, country: (
+        dit.update({
+            country[0]: dit.get(country[0], 0) + 1
+        }) or dit
+    ), countries, {})
+
+print(count_countries_by_letter(total_countries.countries))
